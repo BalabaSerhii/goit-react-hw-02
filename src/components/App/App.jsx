@@ -6,10 +6,10 @@ import Test from "../Test/Test.jsx";
 export default function App() {
   return (
     <div className={css.container}>
-      {/* <Description />
+      <Description />
       <Options />
-      <Feedback /> */}
-      <Test/>
+      {/* <Feedback good={goodClicks} neutral={neutralClicks} bad={badClicks} /> */}
+      {/* <Test/> */}
     </div>
   );
 }

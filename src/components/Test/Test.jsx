@@ -7,7 +7,7 @@ export default function Test() {
       <Btn variant="t2">Вторая</Btn>
       <Btn variant="t3">Третяя</Btn>
       <Btn variant="t4">Четвертая</Btn>
-      <Btn variant="t5">Пятая</Btn>
+      <Btn variant="t5" type="submit">Пятая</Btn>
     </div>
   );
 }
