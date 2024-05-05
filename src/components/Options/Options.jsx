@@ -1,10 +1,13 @@
+import css from "./Options.module.css"
+
+
 export default function Options({ onUpdate, isHidden, onReset }) {
   return (
-    <div>
-      <button onClick={() => onUpdate("good")}>Goods</button>
-      <button onClick={() => onUpdate("neutral")}>Neutral</button>
-      <button onClick={() => onUpdate("bad")}>Bad</button>
-      {!isHidden && <button onClick={onReset}>Reset</button>}
+    <div className="btnAll">
+      <button onClick={() => onUpdate("good")} className={css.btn}>Goods</button>
+      <button onClick={() => onUpdate("neutral")} className={css.btn}>Neutral</button>
+      <button onClick={() => onUpdate("bad")} className={css.btn}>Bad</button>
+      {!isHidden && <button onClick={onReset} className={css.btnRes}>Reset</button>}
     </div>
   );
 }
