@@ -1,30 +1,10 @@
-import { useState, useEffect } from "react";
-import Btn from "../Button/Button.jsx";
-import Feedback from "../Feedback/Feedback.jsx";
-export default function Options() {
-  const [goodClicks, setGoodClicks] = useState(0);
-  const [neutralClicks, setNeutralClicks] = useState(0);
-  const [badClicks, setBadClicks] = useState(0);
-
-  const handleGoodClick = () => {
-    setGoodClicks(goodClicks + 1);
-  };
-
-  const handleNeutralClick = () => {
-    setNeutralClicks(neutralClicks + 1);
-  };
-
-  const handleBadClick = () => {
-    setBadClicks(badClicks + 1);
-  };
-
+export default function Options({ onUpdate, isHidden, onReset }) {
   return (
     <div>
-      <Btn onClick={handleGoodClick}>Good</Btn>
-      <Btn onClick={handleNeutralClick}>Neutral</Btn>
-      <Btn onClick={handleBadClick}>Bad</Btn>
-      <Btn>Reset</Btn>
-      <Feedback good={goodClicks} neutral={neutralClicks} bad={badClicks} positive="0" />
+      <button onClick={() => onUpdate("good")}>Goods</button>
+      <button onClick={() => onUpdate("neutral")}>Neutral</button>
+      <button onClick={() => onUpdate("bad")}>Bad</button>
+      {!isHidden && <button onClick={onReset}>Reset</button>}
     </div>
   );
 }
