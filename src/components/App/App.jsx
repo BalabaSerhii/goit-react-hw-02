@@ -9,9 +9,7 @@ export default function App() {
   const [values, setValues] = useState(getInitFeedback);
   const [clicks, setClicks] = useState(getInitCliksCount);
   const totalFeedback = values.good + values.neutral + values.bad;
-  const positiveFeedback = Math.round(
-    ((values.good + values.neutral) / totalFeedback) * 100
-  );
+  const positiveFeedback = Math.round((values.good / totalFeedback) * 100);
   const isHidden = clicks === 0;
 
   useEffect(() => {
